@@ -277,7 +277,7 @@
       </div>
     </section>
 
-    <section class="section is-small">
+    <!-- <section class="section is-small">
       <div class="hero-body">
         <div class="container"> 
           <h2 class="title is-3">Analysis</h2>
@@ -297,6 +297,25 @@
           </div>
         </div>
       </div>
+    </section> -->
+
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Emperical Analysis</h2>
+              <center>
+              <img src="static/images/exp_ob.png" alt="Inference Overview" class="center-image">
+              </center>
+              <div class="level-set has-text-justified">
+                <p>
+                  (a) Each dot represents the CLIP text embedding of a phrase combining an adjective and &quot; dog &quot; (<i>e.g.</i>, a cute dog). After fine-tuning, customized concepts (the blue dot represents the concept before fine-tuning, and the red dot represents the one after) become far away from the center of the &quot;dog&quot; distribution in the text feature space. (b) Visualization results of cross-attention maps corresponding to the dog token when using the prompt &quot;a photo of a dog swimming in the pool &quot;.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section is-small">
@@ -304,13 +323,13 @@
         <div class="columns is-centered">
           <div class="column is-full">
             <div class="content">
-              <h2 class="title is-3">Thenalysis</h2>
+              <h2 class="title is-3">Theoretical Analysis</h2>
               <center>
-              <img src="static/images/exp_ob.png" alt="Inference Overview" class="center-image">
+              <img src="static/images/theoretical_page-0001.jpg" alt="Inference Overview" class="center-image">
               </center>
               <div class="level-set has-text-justified">
                 <p>
-                  (a) Each dot represents the CLIP text embedding of a phrase combining an adjective and ``dog'' (\textit{e.g.}, a cute dog). After fine-tuning, customized concepts (the blue dot represents the concept before fine-tuning, and the red dot represents the one after) become far away from the center of the ``dog'' distribution in the text feature space. More detailed analysis can be found in Appendix~\ref{appen:visualprompt}. (b) Visualization results of cross-attention maps corresponding to the dog token when using the prompt ``a photo of a dog swimming in the pool''.
+                  During the personalization tuning process, as the distribution of dogs shrinks, the conditional distribution of dogs and headphones also shrinks. This gradually increases the difficulty to sample in this distribution, leading to the weakening of the compositional generation capability. Our ClassDiffusion mitigates this by incorporating semantic preservation loss (SPL) to minimize the semantic drift of the personalized concept from its superclass.
               </div>
             </div>
           </div>
