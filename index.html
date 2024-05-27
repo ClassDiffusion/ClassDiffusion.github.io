@@ -125,20 +125,6 @@
                     </a>
                   </span>
 
-                  <!-- Supplementary PDF link -->
-                  <span class="link-block">
-                    <a
-                      href="static/pdfs/supplementary_material.pdf"
-                      target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
                     <a
@@ -178,15 +164,9 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <video poster="" id="tree" autoplay controls muted loop height="100%">
-            <!-- Your video here -->
-            <source src="static/videos/banner_video.mp4" type="video/mp4" />
-          </video>
+          <img src="static/images/story_page-0001.jpg" alt="teaser image" />
           <h2 class="subtitle has-text-centered">
-            Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus
-            tellus, maximus vel lectus at, placerat pretium mi. Maecenas
-            dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut
-            maximus.
+            Stroy of given dog and sunglasses, showing how a dog win the Nobel prize for literature, and the fate of a sunglasses.
           </h2>
         </div>
       </div>
@@ -201,15 +181,7 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna
-                feugiat nibh elementum, et tempor dolor mattis. Donec accumsan
-                enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex
-                eget mauris cursus euismod nec et nibh. Maecenas ac gravida
-                ante, nec cursus dui. Vivamus purus nibh, placerat ac purus
-                eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus
-                gravida commodo. Pellentesque auctor leo vitae sagittis
-                suscipit.
+                Recent text-to-image customization works have been proven successful in generating images of given concepts by fine-tuning the diffusion models on a few examples. However, these methods tend to overfit the concepts, resulting in failure to create the concept under multiple conditions (e.g. headphone is missing when generating a <sks> dog wearing a headphone'). Interestingly, we notice that the base model before fine-tuning exhibits the capability to compose the base concept with other elements (e.g. a dog wearing a headphone) implying that the compositional ability only disappears after personalization tuning. Inspired by this observation, we present ClassDiffusion, a simple technique that leverages a semantic preservation loss to explicitly regulate the concept space when learning the new concept. Despite its simplicity, this helps avoid semantic drift when fine-tuning on the target concepts. Extensive qualitative and quantitative experiments demonstrate that the use of semantic preservation loss effectively improves the compositional abilities of the fine-tune models. In response to the ineffective evaluation of CLIP-T metrics, we introduce BLIP2-T metric, a more equitable and effective evaluation metric for this particular domain. We also provide in-depth empirical study and theoretical analysis to better understand the role of the proposed loss. Lastly, we also extend our ClassDiffusion to personalized video generation, demonstrating its flexibility.
               </p>
             </div>
           </div>
