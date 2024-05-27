@@ -202,33 +202,30 @@
     </section> -->
 
     <!-- Image carousel -->
-    <section class="hero is-small">
+    <!-- <section class="hero is-small">
       <div class="hero-body">
         <div class="container"> 
+          <h2 class="title is-3">Single Concept Personalization</h2>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item">
-              <!-- Your image here -->
               <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" />
               <h2 class="subtitle has-text-centered">
                 First image description.
               </h2>
             </div>
             <div class="item">
-              <!-- Your image here -->
               <img src="static/images/method_new_page-0001.jpg" alt="MY ALT TEXT" />
               <h2 class="subtitle has-text-centered">
                 Overview of our proposed ClassDiffusion. Our semantic preservation loss (SPL) is calculated by measuring the cosine distance between text features extracted from the same text transformer (using EOS tokens as text features following CLIP) for phrases with personalized tokens and phrases with only superclasses.
               </h2>
             </div>
             <div class="item">
-              <!-- Your image here -->
               <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
               <h2 class="subtitle has-text-centered">
                 Third image description.
               </h2>
             </div>
             <div class="item">
-              <!-- Your image here -->
               <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
               <h2 class="subtitle has-text-centered">
                 Fourth image description.
@@ -237,7 +234,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- End image carousel -->
 
     <section class="section is-small">
@@ -245,7 +242,88 @@
         <div class="columns is-centered">
           <div class="column is-full">
             <div class="content">
-              <h2 class="title is-3">Inference Overview</h2>
+              <h2 class="title is-3">Single Concept Comparison</h2>
+              <center>
+              <img src="static/images/singleconcept.png" alt="Inference Overview" class="center-image">
+              </center>
+              <div class="level-set has-text-justified">
+                <p>
+                  Qualitative comparison between our method and baselines with single given concept.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Multiple Concepts Comparison</h2>
+              <center>
+              <img src="static/images/multiple.png" alt="Inference Overview" class="center-image">
+              </center>
+              <div class="level-set has-text-justified">
+                <p>
+                  Qualitative comparison between our method and custom diffusion with multiple given concept.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-small">
+      <div class="hero-body">
+        <div class="container"> 
+          <h2 class="title is-3">Analysis</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <img src="static/images/exp_ob.png" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">
+                (a) Each dot represents the CLIP text embedding of a phrase combining an adjective and &quot; dog &quot; (<i>e.g.</i>, a cute dog). After fine-tuning, customized concepts (the blue dot represents the concept before fine-tuning, and the red dot represents the one after) become far away from the center of the &quot;dog&quot; distribution in the text feature space. (b) Visualization results of cross-attention maps corresponding to the dog token when using the prompt &quot;a photo of a dog swimming in the pool &quot;.
+              </h2>
+            </div>
+            <div class="item">
+              <img src="static/images/theoretical_page-0001.jpg" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">
+                Overview of our proposed ClassDiffusion. Our semantic preservation loss (SPL) is calculated by measuring the cosine distance between text features extracted from the same text transformer (using EOS tokens as text features following CLIP) for phrases with personalized tokens and phrases with only superclasses.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Thenalysis</h2>
+              <center>
+              <img src="static/images/exp_ob.png" alt="Inference Overview" class="center-image">
+              </center>
+              <div class="level-set has-text-justified">
+                <p>
+                  (a) Each dot represents the CLIP text embedding of a phrase combining an adjective and ``dog'' (\textit{e.g.}, a cute dog). After fine-tuning, customized concepts (the blue dot represents the concept before fine-tuning, and the red dot represents the one after) become far away from the center of the ``dog'' distribution in the text feature space. More detailed analysis can be found in Appendix~\ref{appen:visualprompt}. (b) Visualization results of cross-attention maps corresponding to the dog token when using the prompt ``a photo of a dog swimming in the pool''.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Method Overview</h2>
               <center>
               <img src="static/images/method_new_page-0001.jpg" alt="Inference Overview" class="center-image">
               </center>
