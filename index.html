@@ -173,7 +173,7 @@
         <div class="hero-body">
           <img src="static/images/story_page-0001.jpg" alt="teaser image" />
           <h2 class="subtitle has-text-centered">
-            Stroy of given dog and sunglasses, showing how a dog win the Nobel prize for literature, and the fate of a sunglasses.
+            A qualitative result of two small stories produced by our model. The above showcases a bear's literary journey: from reading a book to ultimately earning a Nobel Literature Prize. The below shows the fate of a sunglasses. Finally, the bear gets the sunglasses. It shows a potential real-world application due to our model's high performance.
           </h2>
         </div>
       </div>
@@ -188,7 +188,7 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Recent text-to-image customization works have been proven successful in generating images of given concepts by fine-tuning the diffusion models on a few examples. However, these methods tend to overfit the concepts, resulting in failure to create the concept under multiple conditions (<i>e.g.</i> headphone is missing when generating a dog wearing a headphone'). Interestingly, we notice that the base model before fine-tuning exhibits the capability to compose the base concept with other elements (<i>e.g.</i> a dog wearing a headphone) implying that the compositional ability only disappears after personalization tuning. Inspired by this observation, we present ClassDiffusion, a simple technique that leverages a semantic preservation loss to explicitly regulate the concept space when learning the new concept. Despite its simplicity, this helps avoid semantic drift when fine-tuning on the target concepts. Extensive qualitative and quantitative experiments demonstrate that the use of semantic preservation loss effectively improves the compositional abilities of the fine-tune models. In response to the ineffective evaluation of CLIP-T metrics, we introduce BLIP2-T metric, a more equitable and effective evaluation metric for this particular domain. We also provide in-depth empirical study and theoretical analysis to better understand the role of the proposed loss. Lastly, we also extend our ClassDiffusion to personalized video generation, demonstrating its flexibility.
+                Recent text-to-image customization works have proven successful in generating images of given concepts by fine-tuning the diffusion models on a few examples. However, tuning-based methods inherently tend to overfit the concepts, resulting in failure to create the concept under multiple conditions (<i>e.g.</i>, headphone is missing when generating "a <tt>&lt;sks&gt;</tt> dog wearing a headphone"). Interestingly, we notice that the base model before fine-tuning exhibits the capability to compose the base concept with other elements (<i>e.g.</i>, "a dog wearing a headphone"), implying that the compositional ability only disappears after personalization tuning. We observe a semantic shift in the customized concept after fine-tuning, indicating that the personalized concept is not aligned with the original concept, and further show through theoretical analyses that this semantic shift leads to increased difficulty in sampling the joint conditional probability distribution, resulting in the loss of the compositional ability. Inspired by this finding, we present <b>ClassDiffusion</b>, a technique that leverages a <b>semantic preservation loss</b> to explicitly regulate the concept space when learning the new concept. Although simple, this approach effectively prevents semantic drift during the fine-tuning process on the target concepts. Extensive qualitative and quantitative experiments demonstrate that the use of semantic preservation loss effectively improves the compositional abilities of fine-tuning models. Lastly, we also extend our ClassDiffusion to personalized video generation, demonstrating its flexibility.
               </p>
             </div>
           </div>
@@ -385,7 +385,8 @@
               </center>
               <div class="level-set has-text-justified">
                 <p>
-                  (a) Each dot represents the CLIP text embedding of a phrase combining an adjective and &quot; dog &quot; (<i>e.g.</i>, a cute dog). After fine-tuning, customized concepts (the blue dot represents the concept before fine-tuning, and the red dot represents the one after) become far away from the center of the &quot;dog&quot; distribution in the text feature space. (b) Visualization results of cross-attention maps corresponding to the dog token when using the prompt &quot;a photo of a dog swimming in the pool &quot;.
+                  (a) Each dot represents the position of a phrase combining an adjective and "dog" in the CLIP text-space. After fine-tuning, customized concepts move further away from the the distribution of super-class.(b) Visualization results of cross-attention map activation maps corresponding to the dog token. The bar chart on the right shows the average activation level in the dog area. Experiments show that the activation strengths of the corresponding classes decrease with the increase of the learning rate and the total number of training steps.
+                  These demonstrate that the customized concepts likely no longer belong to the super-class, resulting in a loss of super-class semantic information, such as wearing a headphone. 
               </div>
             </div>
           </div>
@@ -404,7 +405,7 @@
               </center>
               <div class="level-set has-text-justified">
                 <p>
-                  During the personalization tuning process, as the distribution of dogs shrinks, the conditional distribution of dogs and headphones also shrinks. This gradually increases the difficulty to sample in this distribution, leading to the weakening of the compositional generation capability. Our ClassDiffusion mitigates this by incorporating semantic preservation loss (SPL) to minimize the semantic drift of the personalized concept from its superclass.
+                  The orange and green point sets represent the distributions of dogs and headphones, respectively, and their overlapping regions represent their joint probability distributions. During the tuning process, the conditional distribution of dogs and headphones shrinks, which gradually increases the difficulty of sampling. Unlike the Prior Preservation Loss (PPL) in DreamBooth which aims to maintain class diversity, our proposed Semantic Preservation Loss (SPL) focuses on recovering the semantic space of the customized concept. This approach enables our method to synthesize images that are more consistent with the text prompt.
               </div>
             </div>
           </div>
@@ -423,7 +424,7 @@
               </center>
               <div class="level-set has-text-justified">
                 <p>
-                  Overview of our proposed ClassDiffusion. Our semantic preservation loss (SPL) is calculated by measuring the cosine distance between text features extracted from the same text transformer (using EOS tokens as text features following CLIP) for phrases with personalized tokens and phrases with only superclasses.
+                  The framework of ClassDiffusion. The personalization fine-tuning strategy is based on Custom Diffusion, which primarily fine-tunes the K and V parameters in the transformer block. Our <b>semantic preservation loss (SPL)</b> is calculated by measuring the cosine distance between text features extracted from the same text transformer (using EOS tokens as text features following CLIP) for phrases with personalized tokens and phrases with only super-class.
                 </p>
               </div>
             </div>
